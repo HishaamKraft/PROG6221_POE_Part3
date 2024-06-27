@@ -169,7 +169,7 @@ namespace ST10276925_PROG6221_POE_Part3
 
         private void btnDoneAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            navControl.SelectedItem = MenuItems;
         }
 
         private void btnDisplayRecipes_Click(object sender, RoutedEventArgs e)
