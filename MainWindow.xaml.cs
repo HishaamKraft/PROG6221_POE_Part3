@@ -73,7 +73,73 @@ namespace ST10276925_PROG6221_POE_Part3
 
         private void btnAddIngredient_Click(object sender, RoutedEventArgs e)
         {
-            
+            List<string> currentIngredientNames = new List<string>();
+            List<double> currentIngredientQuantities = new List<double>();
+            List<string> currentIngredientUOMs = new List<string>();
+            List<double> currentIngredientCalories = new List<double>();
+            List<string> currentIngredientFoodGroups = new List<string>();
+            List<string> currentRecipeSteps = new List<string>();
+
+            string ingredientName = tbIngredientName.Text;
+
+            if (!validate.checkName(ingredientName))
+            {
+                MessageBox.Show("Please enter a valid ingredient name", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                tbIngredientName.Clear();
+            }
+            else
+            {
+                currentIngredientNames.Add(ingredientName);
+            }
+
+            string ingredientQuantity = tbIngredientQuantity.Text;
+
+            if (!validate.checkQuantity(ingredientQuantity))
+            {
+                MessageBox.Show($"Please enter a valid quantity for {ingredientName}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                tbIngredientQuantity.Clear();
+            }
+            else
+            {
+                currentIngredientQuantities.Add(Convert.ToDouble(ingredientQuantity));
+            }
+
+            string UoM;
+
+            if (cmbUoM.SelectedIndex == -1)
+            {
+                MessageBox.Show($"Please select a unit of measurement for {ingredientName}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                UoM = cmbUoM.SelectedItem.ToString();
+                currentIngredientUOMs.Add(UoM);
+            }
+
+            string ingredientCalorie = tbIngredientCalorie.Text;
+
+            if (!validate.checkCalories(ingredientCalorie))
+            {
+                MessageBox.Show($"Please enter a valid calorie amount for {ingredientName}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                tbIngredientCalorie.Clear();
+            }
+            else
+            {
+                currentIngredientCalories.Add(Convert.ToDouble(ingredientCalorie));
+            }
+
+            string foodGroup;
+
+            if (cmbFoodGroup.SelectedIndex == -1)
+            {
+                MessageBox.Show($"Please select a food group for {ingredientName}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                foodGroup = cmbFoodGroup.SelectedItem.ToString();
+                currentIngredientFoodGroups.Add(foodGroup);
+            }
+
         }
 
         private void btnSteps_Click(object sender, RoutedEventArgs e)
