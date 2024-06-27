@@ -78,7 +78,6 @@ namespace ST10276925_PROG6221_POE_Part3
             List<string> currentIngredientUOMs = new List<string>();
             List<double> currentIngredientCalories = new List<double>();
             List<string> currentIngredientFoodGroups = new List<string>();
-            List<string> currentRecipeSteps = new List<string>();
 
             string ingredientName = tbIngredientName.Text;
 
@@ -140,6 +139,12 @@ namespace ST10276925_PROG6221_POE_Part3
                 currentIngredientFoodGroups.Add(foodGroup);
             }
 
+            tbRecipeName.Clear();
+            tbIngredientName.Clear();
+            tbIngredientQuantity.Clear();
+            cmbUoM.SelectedIndex = -1;
+            tbIngredientCalorie.Clear();
+            cmbFoodGroup.SelectedIndex = -1;
         }
 
         private void btnSteps_Click(object sender, RoutedEventArgs e)
