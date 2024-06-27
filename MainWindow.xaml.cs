@@ -61,7 +61,7 @@ namespace ST10276925_PROG6221_POE_Part3
                 MessageBox.Show("Please enter a valid recipe name", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 tbRecipeName.Clear();
             }
-            else 
+            else
             {
                 MessageBox.Show("Recipe name entered successfully.\nContinue to add ingredients and steps for your recipe.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 tbRecipeName.IsEnabled = false;
@@ -73,36 +73,7 @@ namespace ST10276925_PROG6221_POE_Part3
 
         private void btnAddIngredient_Click(object sender, RoutedEventArgs e)
         {
-            List<string> currentIngredientNames = new List<string>();
-            List<double> currentIngredientQuantities = new List<double>();
-            List<string> currentIngredientUOMs = new List<string>();
-            List<double> currentIngredientCalories = new List<double>();
-            List<string> currentIngredientFoodGroups = new List<string>();
-            List<string> currentRecipeSteps = new List<string>();
-
-            string ingredientName = tbIngredientName.Text;
-
-            if (!validate.checkName(ingredientName))
-            {
-                MessageBox.Show("Please enter a valid ingredient name", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                tbIngredientName.Clear();
-            }
-            else
-            {
-                currentIngredientNames.Add(ingredientName);
-            }
-
-            string ingredientQuantity = tbIngredientQuantity.Text;
-
-            if (!validate.checkQuantity(ingredientQuantity))
-            {
-                MessageBox.Show("Please enter a valid ingredient quantity", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                tbIngredientQuantity.Clear();
-            }
-            else
-            {
-                currentIngredientQuantities.Add(Convert.ToDouble(ingredientQuantity));
-            }
+            
         }
 
         private void btnSteps_Click(object sender, RoutedEventArgs e)
