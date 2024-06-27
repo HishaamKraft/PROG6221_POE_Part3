@@ -44,7 +44,7 @@ namespace ST10276925_PROG6221_POE_Part3
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            
+            navControl.SelectedItem = AddRecipe;
         }
 
         private void Filter_Click(object sender, RoutedEventArgs e)
