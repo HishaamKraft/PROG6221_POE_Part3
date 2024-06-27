@@ -6,7 +6,7 @@ Recipe Manager (Portfolio of Evidence Part 2)
 This program allows users to input recipes, including ingredients and cooking/baking steps, and provides functionality to scale and reset the recipe quantities.
 
 # Link to GitHub repository: 
-https://github.com/HishaamKraft/PROG6221_POE_Part2
+https://github.com/HishaamKraft/PROG6221_POE_Part3
 
 # Compilation instructions:
 1. Open Visual Studio - Launch Visual Studio from the Start menu or by double-clicking its icon.
