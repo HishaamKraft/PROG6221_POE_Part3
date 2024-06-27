@@ -1,0 +1,258 @@
+﻿<Window x:Class="ST10276925_PROG6221_POE_Part3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST10276925_PROG6221_POE_Part3"
+        mc:Ignorable="d"
+        Title="Recipe Manager" Height="480" Width="826">
+    <Grid>
+        <TabControl Name ="navControl">
+            <TabItem Header="Menu" Name="MenuItems">
+                <StackPanel>
+                    <Label Content="WELCOME" FontSize="45" Margin="20 0 0 0" Width="223"/>
+                    <Label Content="MENU ITEMS:" FontSize="20" Margin="340 50 0 0"/>
+                    <StackPanel Orientation="Horizontal" Margin="332 10 0 0">
+                        <Button Width="150" Height="30" Content="Add a Recipe" Click="Add_Click"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="332 10 0 0">
+                        <Button Width="150" Height="30" Content="Display a Recipe" Click="Display_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="332 10 0 0">
+                        <Button Width="150" Height="30" Content="Scale a Recipe" Click="Scale_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="332 10 0 0">
+                        <Button Width="150" Height="30" Content="Filter Recipes" Click="Filter_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            
+            <TabItem Header="Add Recipe" Name="AddRecipe">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="410"/>
+                        <ColumnDefinition Width="384"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Width="410">
+
+                        <Label Content="ADD RECIPE" FontSize="17" Margin="10 0 0 0"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBlock Width="100" Text="Recipe name:"/>
+                            <TextBox Name="tbRecipeName" Width="200" Margin="30 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button Name="btnAddRecipe" Width="100" Content="Add Recipe" Margin="140 10 0 0" Click="btnAddRecipe_Click"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBlock Width="120" Text="Ingredient name:"/>
+                            <TextBox Name="tbIngredientName" Width="200" Margin="10 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBlock Width="120" Text="Quantity:"/>
+                            <TextBox Name="tbIngredientQuantity" Width="75" Margin="10 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBlock Width="120" Text="Unit of measurement:"/>
+                            <ComboBox Name="cmbUoM" Width="100" Margin="10 0 0 0">
+                                <ComboBoxItem>teaspoon</ComboBoxItem>
+                                <ComboBoxItem>tablespoon</ComboBoxItem>
+                                <ComboBoxItem>gram</ComboBoxItem>
+                                <ComboBoxItem>kilogram</ComboBoxItem>
+                                <ComboBoxItem>millilitre</ComboBoxItem>
+                                <ComboBoxItem>litre</ComboBoxItem>
+                                <ComboBoxItem>cup</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBlock Width="120" Text="Calories:"/>
+                            <TextBox Name="tbCalories" Width="75" Margin="10 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBlock Width="120" Text="Food group:"/>
+                            <ComboBox Name="cmbFoodGroup" Width="100" Margin="10 0 0 0">
+                                <ComboBoxItem>Dairy</ComboBoxItem>
+                                <ComboBoxItem>Grain</ComboBoxItem>
+                                <ComboBoxItem>Starch</ComboBoxItem>
+                                <ComboBoxItem>Protein</ComboBoxItem>
+                                <ComboBoxItem>Carbohydrate</ComboBoxItem>
+                                <ComboBoxItem>Fruit</ComboBoxItem>
+                                <ComboBoxItem>Vegetable</ComboBoxItem>
+                                <ComboBoxItem>Fat</ComboBoxItem>
+                                <ComboBoxItem>Oil</ComboBoxItem>
+                                <ComboBoxItem>Water</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button Name="btnAddIngredient" Width="100" Content="Add Ingredient" Margin="140 15 0 0" Click="btnAddIngredient_Click"/>
+                        </StackPanel>
+
+                        <Label Content="ADD STEPS" FontSize="17" Margin="10 10 0 0"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBlock Width="120" Text="Step 1:"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <TextBox Name="tbSteps" Width="400"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                            <Button Name="btnSteps" Width="100" Content="Add Step" Click="btnSteps_Click"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Width="384">
+
+                        <Label Content="RECIPE DETAILS:" FontSize="17" HorizontalAlignment="Center"/>
+
+                        <StackPanel Orientation="Horizontal">
+                            <ListBox Name="lbRecipeInfo" Width="350" Height="120" Margin="20 10 0 0"/>
+                        </StackPanel>
+
+                        <Label Content="STEPS:" FontSize="17" HorizontalAlignment="Center" Margin="0 15 0 0"/>
+
+                        <StackPanel Orientation="Horizontal">
+                            <ListBox Name="lbRecipeSteps" Width="350" Height="120" Margin="20 10 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Button Name="btnDoneAdd" Content="Done" Width="100" Click="btnDoneAdd_Click" Margin="252 42 0 0"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Display Recipe" Name="DisplayRecipe">
+                <StackPanel>
+                    <Label Content="DISPLAY RECIPES" FontSize="17" HorizontalAlignment="Center"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnDisplayRecipes" Content="Display All Recipes" Width="110" Margin="300 10 0 0" Click="btnDisplayRecipes_Click"/>
+                        <Button Name="btnDeleteRecipes" Content="Delete All Recipes" Width="100" Margin="10 10 0 0" Click="btnDeleteRecipes_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <ListBox Name="lbListOfRecipes" Width="250" Height="120" Margin="285 10 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <TextBlock Text="Enter the name of the recipe to display:" Margin="230 0 0 0"/>
+                        <TextBox Name="tbRecipeToDisplay" Width="150" Margin="10 0 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnRecipeDisplay" Content="Display" Width="100" Margin="10 10 0 0" Click="btnRecipeDisplay_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <ListBox Name="lbRecipeDisplay" Width="600" Height="150" Margin="10 10 0 0"/>
+                        <Button Name="btnDoneDisplay" Content="Done" Width="100" Height="20" Margin="85 140 0 0" Click="btnDoneDisplay_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Scale Recipe" Name="ScaleRecipe">
+                <StackPanel>
+
+                    <Label Content="SCALE RECIPES" FontSize="17" HorizontalAlignment="Center"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Scaling factor:" Margin="320 30 0 0"/>
+
+                        <ComboBox Name="cmbScalingFactor" Width="100" Margin="10 30 0 0">
+                            <ComboBoxItem>0.5</ComboBoxItem>
+                            <ComboBoxItem>2</ComboBoxItem>
+                            <ComboBoxItem>3</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnScaleRecipes" Content="Scale All Recipes" Width="100" Margin="10 40 0 0"/>
+                        <Button Name="btnResetrecipes" Content="Reset All Recipes" Width="100" Margin="10 40 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <ListBox Name="lbScaleDisplay" Width="680" Height="230" Margin="10 10 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnDoneScale" Content="Done" Width=" 100" Margin="700 10 0 0" Click="btnDoneScale_Click"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </TabItem>
+
+            <TabItem Header="Filter Recipes" Name="FilterRecipes">
+                <StackPanel>
+                    <Label Content="FILTER RECIPES" FontSize="17" HorizontalAlignment="Center"/>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Filter by:" Margin="330 10 0 0"/>
+
+                        <ComboBox Name="cmbFilter" Width="100" Margin="10 10 0 0">
+                            <ComboBoxItem>ingredient name</ComboBoxItem>
+                            <ComboBoxItem>food group</ComboBoxItem>
+                            <ComboBoxItem>maximum calories</ComboBoxItem>
+                        </ComboBox>
+                        
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <TextBlock Text="Ingredient name:" Width="120"/>
+                        <TextBox Name="tbFilterIngredient" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <TextBlock Text="Food group:" Width="120"/>
+                        <ComboBox Name="cmbFilterFoodGroup" Width="100">
+                            <ComboBoxItem>Dairy</ComboBoxItem>
+                            <ComboBoxItem>Grain</ComboBoxItem>
+                            <ComboBoxItem>Starch</ComboBoxItem>
+                            <ComboBoxItem>Protein</ComboBoxItem>
+                            <ComboBoxItem>Carbohydrate</ComboBoxItem>
+                            <ComboBoxItem>Fruit</ComboBoxItem>
+                            <ComboBoxItem>Vegetable</ComboBoxItem>
+                            <ComboBoxItem>Fat</ComboBoxItem>
+                            <ComboBoxItem>Oil</ComboBoxItem>
+                            <ComboBoxItem>Water</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <TextBlock Text="Maximum Calories:" Width="120"/>
+                        <TextBox Name="tbFilterCalories" Width="75" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnFilter" Content="Filter" Width="100" Margin="10 20 0 0" Click="btnFilter_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <ListBox Name="lbFilterDisplay" Width="320" Height="180" Margin="10 10 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Button Name="btnDoneFilter" Content="Done" Width="100" Margin="680 10 0 0" Click="btnDoneFilter_Click"/>
+                    </StackPanel>
+
+                    
+                </StackPanel>
+                
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
