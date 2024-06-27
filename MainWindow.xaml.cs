@@ -204,7 +204,7 @@ namespace ST10276925_PROG6221_POE_Part3
 
         private void btnDoneFilter_Click(object sender, RoutedEventArgs e)
         {
-
+            navControl.SelectedItem = MenuItems;
         }
     }
 
