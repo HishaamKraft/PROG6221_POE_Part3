@@ -39,17 +39,17 @@ namespace ST10276925_PROG6221_POE_Part3
 
         private void Display_Click(object sender, RoutedEventArgs e)
         {
-            navControl.SelectedItem = DisplayRecipe;
+            
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            navControl.SelectedItem = AddRecipe;
+            
         }
 
         private void Filter_Click(object sender, RoutedEventArgs e)
         {
-            navControl.SelectedItem = FilterRecipes;
+            
         }
 
         private void btnAddRecipe_Click(object sender, RoutedEventArgs e)
