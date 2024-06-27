@@ -71,7 +71,7 @@ namespace ST10276925_PROG6221_POE_Part3
 
         }
 
-        private void btnAddIngredient_Click(object sender, RoutedEventArgs e)
+        public void btnAddIngredient_Click(object sender, RoutedEventArgs e)
         {
             List<string> currentIngredientNames = new List<string>();
             List<double> currentIngredientQuantities = new List<double>();
@@ -103,7 +103,7 @@ namespace ST10276925_PROG6221_POE_Part3
                 currentIngredientQuantities.Add(Convert.ToDouble(ingredientQuantity));
             }
 
-            string UoM;
+            string UoM = "";
 
             if (cmbUoM.SelectedIndex == -1)
             {
@@ -127,7 +127,7 @@ namespace ST10276925_PROG6221_POE_Part3
                 currentIngredientCalories.Add(Convert.ToDouble(ingredientCalorie));
             }
 
-            string foodGroup;
+            string foodGroup = "";
 
             if (cmbFoodGroup.SelectedIndex == -1)
             {
@@ -139,7 +139,6 @@ namespace ST10276925_PROG6221_POE_Part3
                 currentIngredientFoodGroups.Add(foodGroup);
             }
 
-            tbRecipeName.Clear();
             tbIngredientName.Clear();
             tbIngredientQuantity.Clear();
             cmbUoM.SelectedIndex = -1;
@@ -149,6 +148,22 @@ namespace ST10276925_PROG6221_POE_Part3
 
         private void btnSteps_Click(object sender, RoutedEventArgs e)
         {
+            List<string> currentRecipeSteps = new List<string>();
+           
+            string step = tbSteps.Text;
+
+            if (step.Equals(""))
+            {
+                MessageBox.Show("You may not leave the step input field blank", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                tbSteps.Clear();
+            }
+            else
+            {
+                currentRecipeSteps.Add(step);
+            }
+
+            lbRecipeSteps.Items.Add(step);
+            tbSteps.Clear();
 
         }
 
